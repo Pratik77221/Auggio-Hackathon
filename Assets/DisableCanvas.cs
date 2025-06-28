@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DisableCanvas : MonoBehaviour
 {
@@ -6,6 +7,6 @@ public class DisableCanvas : MonoBehaviour
 
     public void OnButtonClicked()
     {
-        Canvas.SetActive(false);
+       SceneManager.LoadScene("ARScene");
     }
 }

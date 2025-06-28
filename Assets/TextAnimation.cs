@@ -1,57 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TextAnim : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI _textMeshPro;
+    [SerializeField] Text _text;
+    [SerializeField] Button continueButton;
 
     public string[] stringArray;
 
-    [SerializeField] float timeBtwnChars;
-    [SerializeField] float timeBtwnWords;
+    [SerializeField] float timeBtwnChars = 0.05f;
+    [SerializeField] float timeBtwnWords = 1.5f;
 
-    int i = 0;
+    int currentParagraphIndex = 0;
 
     void Start()
     {
-        EndCheck();
+        // Make sure the button is hidden at the start
+        if (continueButton != null)
+            continueButton.gameObject.SetActive(false);
+
+        StartNextParagraph();
     }
 
-    void EndCheck()
+    void StartNextParagraph()
     {
-        if (i <= stringArray.Length - 1)
+        if (currentParagraphIndex <= stringArray.Length - 1)
         {
-            _textMeshPro.text = stringArray[i];
-            StartCoroutine(TextVisible());
+            // Set new paragraph text
+            _text.text = "";  // Clear the text first
+            StartCoroutine(TypewriterEffect(stringArray[currentParagraphIndex]));
+        }
+        else
+        {
+            // All paragraphs have been displayed, show the button
+            if (continueButton != null)
+                continueButton.gameObject.SetActive(true);
         }
     }
 
-    private IEnumerator TextVisible()
+    private IEnumerator TypewriterEffect(string textToType)
     {
-        _textMeshPro.ForceMeshUpdate();
-        int totalVisibleCharacters = _textMeshPro.textInfo.characterCount;
-        int counter = 0;
-
-        while (true)
+        // Type each character one by one
+        for (int i = 0; i <= textToType.Length; i++)
         {
-            int visibleCount = counter % (totalVisibleCharacters + 1);
-            _textMeshPro.maxVisibleCharacters = visibleCount;
-
-            if (visibleCount >= totalVisibleCharacters)
-            {
-                i += 1;
-                Invoke("EndCheck", timeBtwnWords);
-                break;
-            }
-
-            counter += 1;
+            _text.text = textToType.Substring(0, i);
             yield return new WaitForSeconds(timeBtwnChars);
-
-
         }
+
+        // Wait before showing next paragraph
+        yield return new WaitForSeconds(timeBtwnWords);
+
+        // Move to the next paragraph
+        currentParagraphIndex++;
+        StartNextParagraph();
     }
+
+
+    public void launchAR()
+    {
+        SceneManager.LoadScene("ARScene");
+    }
+
 }

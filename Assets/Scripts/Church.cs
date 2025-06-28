@@ -121,7 +121,7 @@ public class Church : MonoBehaviour
                     c.a = alpha;
                     mat.color = c;
                     if (mat.HasProperty("_Mode"))
-                        mat.SetFloat("_Mode", 2f); // 2 = Fade
+                        mat.SetFloat("_Mode", 2f); 
                     mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
                     mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
                     mat.SetInt("_ZWrite", 0);

@@ -37,7 +37,7 @@ public class TapHandler : MonoBehaviour
 
     public void onARButtonPress()
     {
-        SceneManager.LoadScene("ARScene");
+        SceneManager.LoadScene("UI");
     }
 
 }
