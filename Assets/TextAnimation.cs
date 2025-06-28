@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 
 
@@ -10,6 +11,8 @@ public class TextAnim : MonoBehaviour
     [SerializeField] TextMeshProUGUI _textMeshPro;
 
     public string[] stringArray;
+
+    public GameObject ScanButton;
 
     [SerializeField] float timeBtwnChars;
     [SerializeField] float timeBtwnWords;
@@ -26,6 +29,10 @@ public class TextAnim : MonoBehaviour
         if (i <= stringArray.Length - 1)
         {
             _textMeshPro.text = stringArray[i];
+            if (i == stringArray.Length - 1)
+            {
+                ScanButton.SetActive(true);
+            }
             StartCoroutine(TextVisible());
         }
     }
