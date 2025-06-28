@@ -6,14 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
+    path: Assets/Scenes/GPS.unity
+    guid: 91c433b4636e34f81a101390373257df
+  - enabled: 1
+    path: Assets/Scenes/ARScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Convai/ConvaiAR/Scenes/Convai Demo - AR.unity
+    guid: d23e25ca551aacf4c80e8a01703e8490
   m_configObjects:
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: bf6548335df308a4aba4a69621c1bab4,
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: b71abdcb0965af745982c15247b1d41a,
       type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 6b8488a3ea9cc1e4f9c98a1f1a50dd33,
       type: 2}
-    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 578047a649f68d34f960ed9f38a3804c,
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: ffdcbd180cf4b634bbf03998612b8018,
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: dfd89c2f07920774ea7cb3b50344ab2b,
       type: 2}

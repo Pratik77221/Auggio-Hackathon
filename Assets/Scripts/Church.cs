@@ -25,6 +25,8 @@ public class Church : MonoBehaviour
     {
         if (guidePanel != null)
             guidePanel.SetActive(false);
+
+        burntChurch.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision)

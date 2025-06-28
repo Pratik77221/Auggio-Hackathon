@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TapHandler : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class TapHandler : MonoBehaviour
 
     public BuildingInfo defaultPOI;
 
-    void Update()
+    /*void Update()
     {
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -25,17 +26,18 @@ public class TapHandler : MonoBehaviour
         titleText.text = info.title;
         descText.text = info.description;
 
-        Texture2D tex = Resources.Load<Texture2D>("POIImages/" + info.imageName);
-        imageDisplay.texture = tex;
+        //Texture2D tex = Resources.Load<Texture2D>("POIImages/" + info.imageName);
+      //  imageDisplay.texture = tex;
 
-        viewARButton.onClick.RemoveAllListeners();
-        viewARButton.onClick.AddListener(() =>
-        {
-            Debug.Log("Trigger AR scene switch for: " + info.title);
-        });
 
         panel.SetActive(true);
         Handheld.Vibrate();
+    }*/
+
+
+    public void onARButtonPress()
+    {
+        SceneManager.LoadScene("ARScene");
     }
 
 }

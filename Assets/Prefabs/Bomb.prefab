@@ -170,6 +170,8 @@ MonoBehaviour:
   - {fileID: 1026632066290402949, guid: d5bb7fdd8d1142448bc1c1090ed466e6, type: 3}
   - {fileID: 3259726987380558027, guid: 05806d246d7fa8c4e83ef66230bd52ca, type: 3}
   - {fileID: 74978598170054980, guid: 7b5e9a707ec492542bda5fec4e6f52a3, type: 3}
+  smokeEffectPrefab: {fileID: 8790698835731428579, guid: 2ba4d408778d62640931c10b379a06ac,
+    type: 3}
   explosionClip: {fileID: 8300000, guid: 3ad335cfd506830458f356370b823230, type: 3}
   explosionVolume: 1
 --- !u!82 &9070723534052767582
